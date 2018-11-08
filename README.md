@@ -3,7 +3,7 @@ Milter for Sendmail or Postfix to log all possible parts of the e-Mail communica
 
 The project was based on the great work of Sendmail-Jilter which is an Open Source implementation of the Sendmail milter protocol, for implementing milters in Java that can interface with the Sendmail MTA based on a project of sendmail-jilter http://sendmail-jilter.sourceforge.net/
 
-##Changelog
+## Changelog
 The following changes were made in comparison to the original JAR file.
 
 - Simplify the class structure.
