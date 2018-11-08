@@ -3,6 +3,17 @@ Milter for Sendmail or Postfix to log all possible parts of the e-Mail communica
 
 The project was based on the great work of Sendmail-Jilter which is an Open Source implementation of the Sendmail milter protocol, for implementing milters in Java that can interface with the Sendmail MTA based on a project of sendmail-jilter http://sendmail-jilter.sourceforge.net/
 
+##Changelog
+The following changes were made in comparison to the original JAR file.
+
+- Simplify the class structure.
+- Correct 7 Warnings with Java 1.8.
+- Change from log4j-1.2.8.jar to log4j2.
+- Add log4j2.xml
+- Do NOT use SimpleJilterServer.java, use instead only InfoMilter.java.
+- Add capability to use the args from main class with Apache CLI Parser.
+- Add complete list of possible MILTER features (but NOT implemented).
+- Add original LICENSE.txt to the project.
 
 ## JAR-File description
 The **exection of the JAR file with the option ```-h``` or ```--help```** with following command, will show you all **options** you can set, to start the **InfoMilter.jar**:
