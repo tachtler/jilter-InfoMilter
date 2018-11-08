@@ -155,17 +155,17 @@ sendmail-jilter - ENTRY: connect        : String hostname, InetAddress hostaddr,
 *hostaddr.isReachable(timeout)          : true
 *hostaddr.isReachable(netif, ttl, tim...: true
 *hostaddr.isSiteLocalAddress()          : false
-*poperties.toString()                   : {v=Postfix 2.10.1, j=buero.home.tachtler.net, {daemon_name}=buero.home.tachtler.net}
+*poperties.toString()                   : {v=Postfix 2.10.1, j=test.example.com, {daemon_name}=test.example.com}
 *properties.getProperty("v")            : Postfix 2.10.1
-*properties.getProperty("j")            : buero.home.tachtler.net
-*properties.getProperty("{daemon_name}"): buero.home.tachtler.net
+*properties.getProperty("j")            : test.example.com
+*properties.getProperty("{daemon_name}"): test.example.com
 ----------------------------------------: 
 sendmail-jilter - LEAVE: connect        : String hostname, InetAddress hostaddr, Properties properties
 ----------------------------------------: 
 ----------------------------------------: 
 sendmail-jilter - ENTRY: helo           : String helohost, Properties properties
 ----------------------------------------: 
-*helohost                               : buero.home.tachtler.net
+*helohost                               : test.example.com
 *poperties.toString()                   : {}
 ----------------------------------------: 
 sendmail-jilter - LEAVE: helo           : String helohost, Properties properties
@@ -173,10 +173,10 @@ sendmail-jilter - LEAVE: helo           : String helohost, Properties properties
 ----------------------------------------: 
 sendmail-jilter - ENTRY: envfrom        : String[] argv, Properties properties
 ----------------------------------------: 
-*argv[i]                                : [0] <root@tachtler.net>
-*poperties.toString()                   : {{mail_host}=mx1.tachtler.net, {mail_addr}=root@tachtler.net, {mail_mailer}=smtp}
-*poperties.getProperty("{mail_host}")   : mx1.tachtler.net
-*poperties.getProperty("{mail_addr}")   : root@tachtler.net
+*argv[i]                                : [0] <root@example.com>
+*poperties.toString()                   : {{mail_host}=mx1.example.com, {mail_addr}=root@example.com, {mail_mailer}=smtp}
+*poperties.getProperty("{mail_host}")   : mx1.example.com
+*poperties.getProperty("{mail_addr}")   : root@example.com
 *poperties.getProperty("{mail_mailer}...: smtp
 ----------------------------------------: 
 sendmail-jilter - LEAVE: envfrom        : String[] argv, Properties properties
@@ -184,11 +184,11 @@ sendmail-jilter - LEAVE: envfrom        : String[] argv, Properties properties
 ----------------------------------------: 
 sendmail-jilter - ENTRY: envrcpt        : String[] argv, Properties properties
 ----------------------------------------: 
-*argv[i]                                : [0] <klaus@tachtler.net>
-*poperties.toString()                   : {{rcpt_host}=mx1.tachtler.net, {rcpt_mailer}=smtp, {rcpt_addr}=klaus@tachtler.net}
-*poperties.getProperty("{rcpt_host}")   : mx1.tachtler.net
+*argv[i]                                : [0] <klaus@example.com>
+*poperties.toString()                   : {{rcpt_host}=mx1.example.com, {rcpt_mailer}=smtp, {rcpt_addr}=klaus@example.com}
+*poperties.getProperty("{rcpt_host}")   : mx1.example.com
 *poperties.getProperty("{rcpt_mailer}...: smtp
-*poperties.getProperty("{rcpt_addr}")   : klaus@tachtler.net
+*poperties.getProperty("{rcpt_addr}")   : klaus@example.com
 *poperties.getProperty("i")             : null
 ----------------------------------------: 
 sendmail-jilter - LEAVE: envrcpt        : String[] argv, Properties properties
@@ -203,21 +203,21 @@ sendmail-jilter - LEAVE: header         : String headerf, String headerv
 ----------------------------------------: 
 sendmail-jilter - ENTRY: header         : String headerf, String headerv
 ----------------------------------------: 
-*headerf: headerv                       : From: sender@tachtler.net
+*headerf: headerv                       : From: sender@example.com
 ----------------------------------------: 
 sendmail-jilter - LEAVE: header         : String headerf, String headerv
 ----------------------------------------: 
 ----------------------------------------: 
 sendmail-jilter - ENTRY: header         : String headerf, String headerv
 ----------------------------------------: 
-*headerf: headerv                       : To: receiver@tachtler.net
+*headerf: headerv                       : To: receiver@example.com
 ----------------------------------------: 
 sendmail-jilter - LEAVE: header         : String headerf, String headerv
 ----------------------------------------: 
 ----------------------------------------: 
 sendmail-jilter - ENTRY: header         : String headerf, String headerv
 ----------------------------------------: 
-*headerf: headerv                       : Message-Id: <20181108042333.E45CF6E858@buero.home.tachtler.net>
+*headerf: headerv                       : Message-Id: <20181108042333.E45CF6E858@test.example.com>
 ----------------------------------------: 
 sendmail-jilter - LEAVE: header         : String headerf, String headerv
 ----------------------------------------: 
@@ -273,7 +273,7 @@ sendmail-jilter - ENTRY: close          :
 ----------------------------------------: 
 ----------------------------------------: 
 sendmail-jilter - LEAVE: close          : 
-----------------------------------------: 
+----------------------------------------:
 
 ```
 
