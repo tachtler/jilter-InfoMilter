@@ -21,7 +21,7 @@ import com.sendmail.jilter.JilterHandler;
 import com.sendmail.jilter.ServerRunnable;
 
 /*******************************************************************************
- * JMilter Server for connections from an MTA.
+ * Jilter Server for connections from an MTA.
  * 
  * @author Klaus Tachtler. <klaus@tachtler.net>
  * 
@@ -72,8 +72,7 @@ public class InfoMilter implements Runnable {
 		try {
 			argsBean = InfoMilterCLIArgsParser.readArgs(argsBean, args);
 		} catch (ParseException eArgsBean) {
-			eArgsBean.printStackTrace();
-			throw new RuntimeException(
+			throw new InfoMilterCLIArgParserException(
 					"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
 					eArgsBean);
 		}
@@ -86,30 +85,26 @@ public class InfoMilter implements Runnable {
 			try {
 				new InfoMilter(new InetSocketAddress(argsBean.getInetAddress(), argsBean.getPort()),
 						"net.tachtler.jilter.InfoMilterHandler").run();
-			} catch (ClassNotFoundException e) {
-				log.error("ClassNotFoundException                  : " + e);
-				e.printStackTrace();
-				throw new RuntimeException(
+			} catch (ClassNotFoundException eClassNotFoundException) {
+				log.error("ClassNotFoundException                  : " + eClassNotFoundException);
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
-						e);
-			} catch (InstantiationException e) {
-				log.error("InstantiationException                  : " + e);
-				e.printStackTrace();
-				throw new RuntimeException(
+						eClassNotFoundException);
+			} catch (InstantiationException eInstantiationException) {
+				log.error("InstantiationException                  : " + eInstantiationException);
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
-						e);
-			} catch (IllegalAccessException e) {
-				log.error("IllegalAccessException                  : " + e);
-				e.printStackTrace();
-				throw new RuntimeException(
+						eInstantiationException);
+			} catch (IllegalAccessException eIllegalAccessException) {
+				log.error("IllegalAccessException                  : " + eIllegalAccessException);
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
-						e);
-			} catch (IOException e) {
-				log.error("IOException                             : " + e);
-				e.printStackTrace();
-				throw new RuntimeException(
+						eIllegalAccessException);
+			} catch (IOException eIOException) {
+				log.error("IOException                             : " + eIOException);
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
-						e);
+						eIOException);
 			}
 
 			/*

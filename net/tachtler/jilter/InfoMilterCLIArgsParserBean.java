@@ -12,7 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /*******************************************************************************
- * Command Line Interface Argument Parser for JMilter Bean.
+ * Command Line Interface Argument Parser for Jilter Bean.
  * 
  * @author Klaus Tachtler. <klaus@tachtler.net>
  * 
@@ -71,13 +71,12 @@ public class InfoMilterCLIArgsParserBean {
 	/**
 	 * Initialize all variables to default or unseeded values.
 	 */
-	public final void init() {
+	public final void init() throws InfoMilterCLIArgParserException {
 		try {
 			this.inetAddress = InetAddress.getByName("127.0.0.1");
 		} catch (UnknownHostException eInetAddress) {
 			log.error("UnknownHostException                    : " + eInetAddress);
-			eInetAddress.printStackTrace();
-			throw new RuntimeException(
+			throw new InfoMilterCLIArgParserException(
 					"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
 					eInetAddress);
 

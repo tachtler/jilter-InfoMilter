@@ -103,8 +103,7 @@ public class InfoMilterCLIArgsParser {
 				argsBean.setInetAddress(InetAddress.getByName(cmd.getOptionValue("i")));
 			} catch (UnknownHostException eInetAddressHostname) {
 				log.error("UnknownHostException                    : " + eInetAddressHostname);
-				eInetAddressHostname.printStackTrace();
-				throw new RuntimeException(
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
 						eInetAddressHostname);
 			}
@@ -126,13 +125,12 @@ public class InfoMilterCLIArgsParser {
 				port = Integer.parseInt(cmd.getOptionValue("p"));
 			} catch (NumberFormatException eParseInt) {
 				log.error("NumberFormatException                   : " + eParseInt);
-				eParseInt.printStackTrace();
-				throw new RuntimeException(
+				throw new InfoMilterCLIArgParserException(
 						"***** Program stop, because InfoMilter could not be initialized! ***** (For more details, see error messages and caused by below).",
 						eParseInt);
 			}
 
-			if (port >= 1 || port <= 65535) {
+			if (port >= 1 && port <= 65535) {
 				argsBean.setPort(port);
 			} else {
 				throw new InfoMilterCLIArgParserException(
