@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="baseDir">logs</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{DEFAULT} [%-5p] [%-40C{1}] [%-40M] %m%n" />
+		</Console>
+		<RollingFile name="RollingFile"
+			fileName="${baseDir}/jmilter.log"
+			filePattern="${baseDir}/$${date:yyyy-MM}/jilter-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout
+				pattern="%d{DEFAULT} [%-5p] [%-40C{1}] [%-40M] %m%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<TimeBasedTriggeringPolicy />
+				<CronTriggeringPolicy schedule="0 0 * * * ?" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${baseDir}" maxDepth="3">
+					<IfFileName glob="*/jilter-*.log.gz" />
+					<IfLastModified age="31d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
