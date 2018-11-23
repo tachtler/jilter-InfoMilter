@@ -9,7 +9,7 @@
 				pattern="%d{DEFAULT} [%-5p] [%-40C{1}] [%-40M] %m%n" />
 		</Console>
 		<RollingFile name="RollingFile"
-			fileName="${baseDir}/jmilter.log"
+			fileName="${baseDir}/jilter.log"
 			filePattern="${baseDir}/$${date:yyyy-MM}/jilter-%d{MM-dd-yyyy}-%i.log.gz">
 			<PatternLayout
 				pattern="%d{DEFAULT} [%-5p] [%-40C{1}] [%-40M] %m%n" />
