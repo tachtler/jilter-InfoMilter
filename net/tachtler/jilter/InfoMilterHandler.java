@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Klaus Tachtler. All Rights Reserved.
+ * Copyright (c) 2022 Klaus Tachtler. All Rights Reserved.
  * Klaus Tachtler. <klaus@tachtler.net>
  * http://www.tachtler.net
  */
@@ -43,7 +43,7 @@ import com.sendmail.jilter.JilterStatus;
  *         the Free Software Foundation; either version 2 of the License, or (at
  *         your option) any later version.
  *
- *         Copyright (c) 2018 by Klaus Tachtler.
+ *         Copyright (c) 2022 by Klaus Tachtler.
  ******************************************************************************/
 public class InfoMilterHandler extends JilterHandlerAdapter {
 
