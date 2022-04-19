@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Klaus Tachtler. All Rights Reserved.
+ * Copyright (c) 2022 Klaus Tachtler. All Rights Reserved.
  * Klaus Tachtler. <klaus@tachtler.net>
  * http://www.tachtler.net
  */
@@ -24,7 +24,7 @@ package net.tachtler.jilter;
  *         implied. See the License for the specific language governing
  *         permissions and limitations under the License..
  * 
- *         Copyright (c) 2018 by Klaus Tachtler.
+ *         Copyright (c) 2022 by Klaus Tachtler.
  ******************************************************************************/
 public class InfoMilterCLIArgParserException extends Exception {
 
