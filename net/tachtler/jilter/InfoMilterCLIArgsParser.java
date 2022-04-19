@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 Klaus Tachtler. All Rights Reserved.
+ * Copyright (c) 2022 Klaus Tachtler. All Rights Reserved.
  * Klaus Tachtler. <klaus@tachtler.net>
  * http://www.tachtler.net
  */
@@ -38,7 +38,7 @@ import org.apache.logging.log4j.core.config.Configurator;
  *         implied. See the License for the specific language governing
  *         permissions and limitations under the License..
  * 
- *         Copyright (c) 2018 by Klaus Tachtler.
+ *         Copyright (c) 2022 by Klaus Tachtler.
  ******************************************************************************/
 public class InfoMilterCLIArgsParser {
 
@@ -58,7 +58,7 @@ public class InfoMilterCLIArgsParser {
 
 		final String USAGE = "[-i <IPv4-Address to listen>] [-p <Port to listen>] [-l <Log-Level>] [-h] [-v] [-d]";
 		final String HEADER = "\r\nInfoMilter for Sendmail or Postfix to log all possible parts of the e-Mail communication.\r\n\r\n";
-		final String FOOTER = "\r\nCopyright (c) 2018 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved. Version 1.0.\r\n\r\n";
+		final String FOOTER = "\r\nCopyright (c) 2022 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved. Version 1.1.\r\n\r\n";
 
 		Options options = new Options();
 
