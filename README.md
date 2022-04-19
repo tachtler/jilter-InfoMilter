@@ -8,7 +8,7 @@ The project was based on the great work of Sendmail-Jilter which is an Open Sour
 
 - Simplify the class structure.
 - Correct 7 Warnings with Java 1.8.
-- Change from log4j-1.2.8.jar to log4j2.
+- Change from log4j-1.2.8.jar to log4j2-2.17.2.
 - Add log4j2.xml
 - Do NOT use SimpleJilterServer.java, use instead only InfoMilter.java.
 - Add capability to use the args from main class with Apache CLI Parser.
@@ -33,8 +33,8 @@ communication.
  -p,--port <arg>       [REQUIRED] Port where the milter is listening on
  -v,--version          Version of the program
 
-Copyright (c) 2018 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved.
-Version 1.0.
+Copyright (c) 2022 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved.
+Version 1.1.
 
 ```
 
@@ -367,9 +367,9 @@ In the upcomming dialog, choose a **Launch configuration:** (if you have one), a
 ## JAR-File (```shell``` or ```console```)
 The creation of the **InfoMilter.jar** was done with following directory structure:
 ```
-commons-cli-1.4.jar
-log4j-api-2.11.1.jar
-log4j-core-2.11.1.jar
+commons-cli-1.5.0.jar
+log4j-api-2.17.2.jar
+log4j-core-2.17.2.jar
 log4j2.xml
 com/sendmail/jilter/CustomJilterStatus.java
 com/sendmail/jilter/JilterConstants.java
@@ -402,7 +402,7 @@ First create a **META-INF/MANIFEST.MF** file, with following commands:
 with following content:
 ```
 Manifest-Version: 1.0
-Class-Path: . commons-cli-1.4.jar log4j-api-2.11.1.jar log4j-core-2.11.1.jar
+Class-Path: . commons-cli-1.5.0.jar log4j-api-2.17.2.jar log4j-core-2.17.2.jar
 Main-Class: net.tachtler.jilter.InfoMilter
 
 ```
@@ -435,10 +435,10 @@ jar cvfm InfoMilter.jar META-INF/MANIFEST.MF log4j2.xml *.jar com/sendmail/jilte
 ```
 $ jar cvfm InfoMilter.jar META-INF/MANIFEST.MF log4j2.xml *.jar com/sendmail/jilter/*.class net/tachtler/jilter/*.class
 added manifest
-adding: log4j2.xml(in = 1027) (out= 484)(deflated 52%)
-adding: commons-cli-1.4.jar(in = 53820) (out= 49458)(deflated 8%)
-adding: log4j-api-2.11.1.jar(in = 264058) (out= 236389)(deflated 10%)
-adding: log4j-core-2.11.1.jar(in = 1607936) (out= 1426304)(deflated 11%)
+adding: log4j2.xml(in = 1026) (out= 481)(deflated 53%)
+adding: commons-cli-1.5.0.jar(in = 58284) (out= 53949)(deflated 7%)
+adding: log4j-api-2.17.2.jar(in = 302511) (out= 272694)(deflated 9%)
+adding: log4j-core-2.17.2.jar(in = 1811090) (out= 1620030)(deflated 10%)
 adding: com/sendmail/jilter/CustomJilterStatus.class(in = 2270) (out= 1126)(deflated 50%)
 adding: com/sendmail/jilter/JilterConstants.class(in = 2561) (out= 987)(deflated 61%)
 adding: com/sendmail/jilter/JilterEOMActions.class(in = 512) (out= 268)(deflated 47%)
@@ -450,13 +450,13 @@ adding: com/sendmail/jilter/JilterProcessor.class(in = 6062) (out= 2666)(deflate
 adding: com/sendmail/jilter/JilterServerPacketUtil.class(in = 3158) (out= 1370)(deflated 56%)
 adding: com/sendmail/jilter/JilterStatus.class(in = 988) (out= 521)(deflated 47%)
 adding: com/sendmail/jilter/ServerRunnable.class(in = 2069) (out= 1023)(deflated 50%)
-adding: com/sendmail/jilter/SimpleJilterServer.class(in = 5510) (out= 2615)(deflated 52%)
 adding: com/sendmail/jilter/SimpleJilterServer$SimpleGetopt.class(in = 1418) (out= 817)(deflated 42%)
+adding: com/sendmail/jilter/SimpleJilterServer.class(in = 5510) (out= 2615)(deflated 52%)
 adding: com/sendmail/jilter/SimpleJilterStatus.class(in = 502) (out= 314)(deflated 37%)
-adding: net/tachtler/jilter/InfoMilter.class(in = 5179) (out= 2361)(deflated 54%)
+adding: net/tachtler/jilter/InfoMilter.class(in = 5079) (out= 2302)(deflated 54%)
 adding: net/tachtler/jilter/InfoMilterCLIArgParserException.class(in = 549) (out= 313)(deflated 42%)
-adding: net/tachtler/jilter/InfoMilterCLIArgsParserBean.class(in = 2090) (out= 1004)(deflated 51%)
-adding: net/tachtler/jilter/InfoMilterCLIArgsParser.class(in = 5176) (out= 2433)(deflated 52%)
+adding: net/tachtler/jilter/InfoMilterCLIArgsParserBean.class(in = 2106) (out= 992)(deflated 52%)
+adding: net/tachtler/jilter/InfoMilterCLIArgsParser.class(in = 5100) (out= 2385)(deflated 53%)
 adding: net/tachtler/jilter/InfoMilterHandler.class(in = 9117) (out= 2889)(deflated 68%)
 ```
 (**Example Execution: Linux (all \*.jar files must be shipped with InfoMilter.jar !!!**):
@@ -476,8 +476,8 @@ communication.
  -p,--port <arg>       [REQUIRED] Port where the milter is listening on
  -v,--version          Version of the program
 
-Copyright (c) 2018 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved.
-Version 1.0.
+Copyright (c) 2022 Klaus Tachtler, <klaus@tachtler.net>. All Rights Reserved.
+Version 1.1.
 
 ```
 
